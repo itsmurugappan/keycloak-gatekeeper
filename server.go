@@ -619,7 +619,7 @@ func (r *oauthProxy) createUpstreamProxy(upstream *url.URL) error {
 		MaxIdleConns:          r.config.MaxIdleConns,
 		MaxIdleConnsPerHost:   r.config.MaxIdleConnsPerHost,
 	}
-
+	r.upstream.(*goproxy.ProxyHttpServer).KeepDestinationHeaders = true
 	return nil
 }
 
